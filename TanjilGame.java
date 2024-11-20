@@ -6,27 +6,27 @@ import java.util.Scanner;
 
 public class TanjilGame {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in); // User input scanner
+        Scanner input = new Scanner(System.in);                                   // User input scanner
         int score = 0;
 
         try {
-            // Load the game file
+                                          // Load the game file
             File file = new File("tanjilgame.txt");
             if (!file.exists()) {
                 System.out.println("Error: The file 'tanjilgame.txt' does not exist.");
                 return;
             }
 
-            Scanner fileScanner = new Scanner(file); // Scanner to read the file
+            Scanner fileScanner = new Scanner(file);                      // Scanner to read the file
             System.out.println("Welcome to the Math Game!");
             System.out.println("Answer the questions to earn points!");
 
-            // Process each question
+                                                                      // Process each question
             while (fileScanner.hasNextLine()) {
                 String line = fileScanner.nextLine();
                 String[] parts = line.split(" ");
 
-                // Ensure valid input format
+                                                                  // Ensure valid input format
                 if (parts.length < 3) {
                     System.out.println("Skipping invalid question format: " + line);
                     continue;
@@ -36,7 +36,7 @@ public class TanjilGame {
                 String operator;
 
                 try {
-                    // Parse numbers and operator
+                                                            // Parse numbers and operator
                     num1 = Integer.parseInt(parts[0]);
                     operator = parts[1];
                     num2 = Integer.parseInt(parts[2]);
@@ -45,7 +45,7 @@ public class TanjilGame {
                     continue;
                 }
 
-                // Calculate the correct answer
+                                                           // Calculate the correct answer
                 if (operator.equals("+")) {
                     correct = num1 + num2;
                 } else if (operator.equals("-")) {
@@ -55,11 +55,11 @@ public class TanjilGame {
                     continue;
                 }
 
-                // Prompt the user for their answer
+                                                           // Prompt the user for their answer
                 System.out.print(num1 + " " + operator + " " + num2 + " = ");
                 int userAnswer = input.nextInt();
 
-                // Check the user's answer
+                                                             // Check the user's answer
                 if (userAnswer == correct) {
                     System.out.println("Correct!");
                     score++;
@@ -68,9 +68,9 @@ public class TanjilGame {
                 }
             }
 
-            fileScanner.close(); // Close the file scanner
+            fileScanner.close();                // Close the file scanner
 
-            // Display the final score
+                                                          // Display the final score
             System.out.println("Game over! Your final score is: " + score);
 
         } catch (FileNotFoundException e) {
@@ -78,7 +78,7 @@ public class TanjilGame {
         } catch (Exception e) {
             System.out.println("An error occurred: " + e.getMessage());
         } finally {
-            input.close(); // Close the user input scanner
+            input.close();                            // Close the user input scanner
         }
     }
 }
