@@ -29,7 +29,7 @@ class FactorionNumbercheck {
     }
 }
 
-public class FactorionNumberMain {
+public class FactorionNumberMain {                              //main class
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
