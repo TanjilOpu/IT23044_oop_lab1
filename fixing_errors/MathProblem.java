@@ -10,7 +10,7 @@ public class MathProblem {
     public static void main(String[] args) {
       
  
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);                                    //solved problem 1
 
         // Equation 1: Right Triangle Height
         System.out.println("Equation 1: Calculate the height of a right triangle.");
