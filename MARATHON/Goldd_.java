@@ -1,6 +1,6 @@
 
 package goldd_;
-
+          // CODEFORCES GOLD RUSH PROBLEM SOLVE WITH JAVA
 
 import java.util.Scanner;
 
